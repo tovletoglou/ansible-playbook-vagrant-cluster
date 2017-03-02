@@ -1,0 +1,26 @@
+---
+
+- hosts: ansible
+  tasks:
+    - name: Clone roles in the ansible playbook
+      git:
+        repo: "https://github.com/tovletoglou/{{ item }}.git"
+        dest: "{{ playbook_dir }}/roles/{{ item }}"
+      with_items:
+        - ansible-role-aegir
+        - ansible-role-aegir-hosting-queued
+        - ansible-role-composer
+        - ansible-role-dotfiles
+        - ansible-role-drupalconsole
+        - ansible-role-drush
+        - ansible-role-elasticsearch
+        - ansible-role-firewalld
+        - ansible-role-git
+        - ansible-role-httpd
+        - ansible-role-initialize
+        - ansible-role-java
+        - ansible-role-mariadb
+        - ansible-role-php
+        - ansible-role-scrapy
+        - ansible-role-user
+        - ansible-role-yum-repos

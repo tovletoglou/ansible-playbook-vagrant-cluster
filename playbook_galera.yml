@@ -1,0 +1,7 @@
+---
+
+- hosts: galera
+  become: yes
+  roles:
+    - ansible-role-firewalld
+    - ansible-role-mariadb

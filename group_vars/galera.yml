@@ -1,0 +1,45 @@
+---
+
+mysql_root_password: "MYSQL_ROOT_PASSWORD"
+mariadb_install_from_centos: false
+mariadb_my_cnf_configuration: true
+mariadb_galera_configuration: true
+galera_wsrep_cluster_address: gcomm://192.168.33.11,192.168.33.12,192.168.33.13
+galera_wsrep_cluster_name: galera
+firewalld_rules:
+  ssh:
+    port: 22
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  mysql_client_connections:
+    port: 3306
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  galera_cluster_replication_traffic:
+    port: 4567
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  rsync:
+    port: 873
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  state_snapshot_transfer:
+    port: 4444
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  xinetd:
+    port: 9200
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true

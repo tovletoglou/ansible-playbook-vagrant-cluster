@@ -1,0 +1,47 @@
+---
+
+# This playbook builds the Aegir server on Centos 7.
+# It have two hosts: `hostmaster` and `test`.
+#
+#
+# Vagrant VM
+# The `hostmaster` host is a Vagrant VM defined in `hosts_vagrant`
+# It is included in the [vagrant blueprint](https://github.com/tovletoglou/vagrant-multi-vm)
+# To run the playbook on the Vagrant VM execute:
+#
+#     ansible-playbook -i hosts_vagrant playbook_hostmaster.yml
+#
+#
+# Test VM
+# The `test` host is a Digital Ocean VM.
+# It is not included in the [vagrant blueprint](https://github.com/tovletoglou/vagrant-multi-vm)
+# To run the playbook on the Test VM execute:
+#
+#     ansible-playbook -i hosts_test playbook_hostmaster.yml --ask-vault-pass
+#
+# File: `hosts_test` is an ansible hosts file looks like:
+#
+#     [test]
+#     real.domain.tld ansible_ssh_user=real_linux_user
+#
+# File: `group_vars/test.yml` contains the variable used for this environment.
+#
+# These two files are encrypted using the `ansible-vault`.
+
+- hosts: hostmaster:test
+  become: yes
+  roles:
+    - ansible-role-yum-repos
+    - ansible-role-initialize
+    - ansible-role-git
+    - ansible-role-firewalld
+    - ansible-role-mariadb
+    - ansible-role-httpd
+    - ansible-role-php
+    - ansible-role-composer
+    - ansible-role-drush
+    - ansible-role-user
+    - ansible-role-aegir
+    - ansible-role-aegir-hosting-queued
+    - ansible-role-drupalconsole
+    - ansible-role-dotfiles

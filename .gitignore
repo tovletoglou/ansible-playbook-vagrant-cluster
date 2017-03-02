@@ -1,0 +1,25 @@
+# Ignore files and folders for GIT
+
+# Ansible roles (fetch them as different projects managed by ansible)
+roles/
+
+# Ansible log file
+ansible.log
+
+# Ansible playbook retry
+*.retry
+
+# Python
+*.pyc
+
+# IDE PHPstorm files
+.idea
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/n0ts/ansible-human_log.git
+	branch = master
+	commit = e9e1a5fc5116e43d570f54b4c11b72756b0ea7e2
+	parent = 06d8ed758d1b6ac2bf7750e57a2bfe589762f05d
+	cmdver = 0.3.0

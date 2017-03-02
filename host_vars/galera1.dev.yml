@@ -1,0 +1,4 @@
+---
+
+galera_wsrep_node_address: 192.168.33.11
+galera_wsrep_node_name: galera1

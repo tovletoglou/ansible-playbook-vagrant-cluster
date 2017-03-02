@@ -1,0 +1,7 @@
+---
+
+- hosts: elastic
+  become: yes
+  roles:
+    - ansible-role-java
+    - ansible-role-elasticsearch

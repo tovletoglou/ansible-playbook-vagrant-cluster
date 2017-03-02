@@ -1,0 +1,50 @@
+---
+
+# Add extra repository for webmin on all vagrant servers.
+# yum_repos_list_custom:
+#   webmin:
+#     file: webmin
+#     description: Webmin Distribution Neutral
+#     baseurl: http://download.webmin.com/download/yum
+#     mirrorlist: http://download.webmin.com/download/yum/mirrorlist
+#     gpgkey: http://www.webmin.com/jcameron-key.asc
+#     enabled: yes
+#     gpgcheck: yes
+#     failovermethod: priority
+
+initialize_packages:
+  - curl
+  - gcc
+  - kernel-devel
+  - libzip
+  - man
+  - nano
+  - net-tools
+  - nmap
+  - postfix
+  - tree
+  - unzip
+  - vim
+  # - webmin
+  - wget
+  - zip
+
+dotfile_users:
+  - {
+      name: root,
+      dest: /root,
+      gitname: GIT_ROOT_NAME,
+      gitmail: ROOT@EMAIL
+    }
+  - {
+      name: vagrant,
+      dest: /home/vagrant,
+      gitname: GIT_VAGRANT_NAME,
+      gitmail: VAGRANT@EMAIL
+    }
+  - {
+      name: aegir,
+      dest: /var/aegir,
+      gitname: GIT_AEGIR_NAME,
+      gitmail: AEGIR@EMAIL
+    }

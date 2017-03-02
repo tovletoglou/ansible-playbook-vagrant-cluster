@@ -1,0 +1,6 @@
+---
+
+- hosts: scrapy
+  become: yes
+  roles:
+    - ansible-role-scrapy

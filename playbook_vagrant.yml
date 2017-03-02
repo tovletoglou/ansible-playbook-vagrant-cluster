@@ -1,0 +1,9 @@
+---
+
+- hosts: vagrant:test
+  become: yes
+  roles:
+    - ansible-role-yum-repos
+    - ansible-role-initialize
+    - ansible-role-git
+    - ansible-role-dotfiles
