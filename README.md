@@ -1,46 +1,46 @@
-# Ansible playbook for Aegir on CentOS 7
+# Ansible playbook for Vagrant Playground
 
-This is an Ansible playbook to setup a Vagrant, multi VM system.
-
-For more information about the Vagrant machines see [vagrant-multi-vm](https://github.com/tovletoglou/vagrant-multi-vm).
+This is an Ansible playbook used to setup a Vagrant playground with multiple servers for different testing purposes.<br>
+For more information about the Vagrant blueprint see [vagrant-playground](https://github.com/tovletoglou/vagrant-playground).
 
 ## Requirements
 
-Tested on CentOS 7
+Tested on CentOS 7.
 
 ## Get started
 
-1. Clone this project
+1. Clone the project and cd in.
 
   ```
-  git clone https://github.com/tovletoglou/ansible-playbook-aegir-centos.git
+  git clone https://github.com/tovletoglou/ansible-playbook-vagrant-playground.git
+  cd ansible-playbook-vagrant-playground
   ```
 
-2. Run the playbook `playbook_ansible.yml`. It will get all the roles and put them in `roles/ansible-role-name` (TODO: add roles ansible galaxy).
+2. Edit the `hosts` accordingly, edit the IP addresses to reflect the VMs.
+
+3. Run the playbook `playbook_ansible.yml`. It will get all the necessary roles and put them in `roles/ansible-role-name`.
 
   ```
-  ansible-playbook -i hosts_vagrant playbook_ansible.yml
+  ansible-playbook -i hosts playbook_ansible.yml
   ```
 
-3. Run the playbook `playbook_vagrant` to initialize the servers.
+4. Run the playbook `playbook_vagrant` to initialize the servers.
 
   ```
-  ansible-playbook -i hosts_vagrant playbook_vagrant.yml
+  ansible-playbook -i hosts playbook_vagrant.yml
   ```
 
-4. Run the playbook `playbook_webserver` to setup the web servers.
+5. Now you can run any spesific playbook to provision the coorisponding VM/VMs.<br>
+  For example run the playbook `playbook_hostmaster` to setup Aegir Drupal hosting system.
 
   ```
-  ansible-playbook -i hosts_vagrant playbook_webserver.yml
+  ansible-playbook -i hosts playbook_hostmaster.yml
   ```
 
-5. Run the playbook `playbook_hostmaster` to setup Aegir.
+## Running on live VM
 
-  ```
-  ansible-playbook -i hosts_vagrant playbook_hostmaster.yml
-  ```
-
-If you like to run the playbooks against physical testing servers use the `hosts_test` using ansible vault.
+If you like to run the playbooks against online testing servers, create a new `hosts` file and encrypt it with ansible vault.<br>
+For example, I use the `hosts_test` to target online testing VMs. `hosts` file does not contain sensitive information (hostname, IP, SSH port, user) although it's good to think twice about the data we encrypt and publish online.
 
 ```
 ansible-vault decrypt hosts_test
@@ -49,16 +49,22 @@ ansible-playbook -i hosts_test playbook_full_stack_aegir.yml --ask-vault-pass
 
 ## Extra info
 
-### git-subrepo
+## 'roles/' directory
 
-The sub-directories in the `callback_plugins` folder are git projects integrated with the [git-subrepo](https://github.com/ingydotnet/git-subrepo). You can recognize them by the `.gitrepo` file.
+The `roles/` directory will be created after the `ansible-playbook -i hosts playbook_ansible.yml` and contain all the roles for the playbooks.<br>
+All the roles are independent projects and ignored by the main project. Check the `.gitignore` file for details.
 
-Do not commit changes of the sub-projects on the main project.
+### 'callback_plugins/' directory
 
-### galera
-
-The `playbook_galera.yml` is working but doesn't used by Aegir.
+The sub-directories in the `callback_plugins/` are independent git projects integrated with the [git-subrepo](https://github.com/ingydotnet/git-subrepo). You can recognize them by the `.gitrepo` file.
 
 ### git_check_status.sh
 
 The `git_check_status.sh` is a bash script used to check the `git status` for the roles (as sub-projects)
+
+### More thinks to do
+
+- TODO: Add roles ansible galaxy or replace them with similar roles
+- TODO: Fix the `playbook_galera.yml`
+- TODO: Fix the `playbook_elastic`
+- TODO: Fix the `playbook_webserver`
