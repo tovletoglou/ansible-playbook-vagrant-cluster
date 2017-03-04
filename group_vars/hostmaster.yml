@@ -9,10 +9,10 @@ user_passwordless_sudo: true
 #user_authorized_keys: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 #user_authorized_keys: https://github.com/user.keys
 
-aegir_frontend_url: aegir.dev
-aegir_host_url: aegir.dev
+aegir_frontend_url: aegir.local
+aegir_host_url: aegir.local
 aegir_db_password: "MYSQL_AEGIR_USER_PASSWORD"
-aegir_client_email: admin@aegir.dev
+aegir_client_email: admin@aegir.local
 # Do not enable hosting_* modules before the hosting-queued daemon, otherwise the daemon does not run.
 aegir_modules_enable:
   - adminimal_admin_menu
