@@ -7,6 +7,8 @@ haproxy
 galera
 webserver
 hostmaster
+swagger
+teamcity
 
 [ansible]
 ansible.local   ansible_host=192.168.33.10 ansible_port=22 ansible_user=vagrant
@@ -37,3 +39,9 @@ web3.local      ansible_host=192.168.33.72 ansible_port=22 ansible_user=vagrant
 
 [hostmaster]
 aegir.local     ansible_host=192.168.33.80 ansible_port=22 ansible_user=vagrant
+
+[swagger]
+swagger.local   ansible_host=192.168.33.90 ansible_port=22 ansible_user=vagrant
+
+[teamcity]
+teamcity.local  ansible_host=192.168.33.100 ansible_port=22 ansible_user=vagrant

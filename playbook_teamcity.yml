@@ -1,0 +1,6 @@
+---
+
+- hosts: teamcity
+  tasks:
+    - name: Install TeamCity
+      shell: echo "TODO install TeamCity"

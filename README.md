@@ -16,7 +16,7 @@ Tested on CentOS 7.
   cd ansible-playbook-vagrant-playground
   ```
 
-2. Edit the `hosts` accordingly, edit the IP addresses to reflect the VMs.
+2. [Optional] Edit the `hosts` accordingly, edit the IP addresses to reflect the VMs.
 
 3. Run the playbook `playbook_ansible.yml`. It will get all the necessary roles and put them in `roles/ansible-role-name`.
 
@@ -30,7 +30,7 @@ Tested on CentOS 7.
   ansible-playbook -i hosts playbook_vagrant.yml
   ```
 
-5. Now you can run any spesific playbook to provision the coorisponding VM/VMs.<br>
+5. Now you can run any specific playbook to provision the corresponding VM/VMs.<br>
   For example run the playbook `playbook_hostmaster` to setup Aegir Drupal hosting system.
 
   ```
@@ -64,7 +64,9 @@ The `git_check_status.sh` is a bash script used to check the `git status` for th
 
 ### More thinks to do
 
-- TODO: Add roles ansible galaxy or replace them with similar roles
+- TODO: Add roles to ansible galaxy or replace them with similar roles
 - TODO: Fix the `playbook_galera.yml`
 - TODO: Fix the `playbook_elastic`
 - TODO: Fix the `playbook_webserver`
+- TODO: Fix the `playbook_swagger`
+- TODO: Fix the `playbook_teamcity`

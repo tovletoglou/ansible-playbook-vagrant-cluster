@@ -1,0 +1,25 @@
+---
+
+# If you are running this playbook on the [vagrant-playground](https://github.com/tovletoglou/vagrant-playground)
+# you can use the bellow hostnames, otherwise edit accordingly.
+#
+# - To execute the swagger server run first the `playbook_vagrant.yml` and then this
+# `playbook_swagger` playbook.
+# - After that you ssh to swagger by:
+#     ssh vagrant@swagger.local
+# - And create the first project:
+#     swagger project create hello-world
+# - The start the project:
+#     swagger project start hello-world
+# - And access the interface on your host machine from your browser at:
+#    http://swagger.local:10010/
+#
+
+- hosts: swagger
+  become: yes
+  tasks:
+    - name: Install NodeJS
+      yum:
+        pkg: nodejs
+    - name: Install Swagger
+      command: npm install -g swagger
