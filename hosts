@@ -12,11 +12,6 @@ teamcity
 [ansible]
 ansible.local   ansible_port=22 ansible_user=vagrant
 
-[example]
-theseus.local   ansible_port=22 ansible_user=vagrant
-jason.local     ansible_port=22 ansible_user=vagrant
-asklepios.local ansible_port=22 ansible_user=vagrant
-
 [scrapy]
 scrapy.local    ansible_port=22 ansible_user=vagrant
 
