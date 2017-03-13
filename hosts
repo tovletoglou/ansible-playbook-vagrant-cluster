@@ -1,6 +1,5 @@
 [vagrant:children]
 ansible
-example
 scrapy
 elastic
 haproxy
@@ -11,37 +10,37 @@ swagger
 teamcity
 
 [ansible]
-ansible.local   ansible_host=192.168.33.10 ansible_port=22 ansible_user=vagrant
+ansible.local   ansible_port=22 ansible_user=vagrant
 
 [example]
-theseus.local   ansible_host=192.168.33.20 ansible_port=22 ansible_user=vagrant
-jason.local     ansible_host=192.168.33.21 ansible_port=22 ansible_user=vagrant
-asklepios.local ansible_host=192.168.33.22 ansible_port=22 ansible_user=vagrant
+theseus.local   ansible_port=22 ansible_user=vagrant
+jason.local     ansible_port=22 ansible_user=vagrant
+asklepios.local ansible_port=22 ansible_user=vagrant
 
 [scrapy]
-scrapy.local    ansible_host=192.168.33.30 ansible_port=22 ansible_user=vagrant
+scrapy.local    ansible_port=22 ansible_user=vagrant
 
 [elastic]
-elastic.local   ansible_host=192.168.33.40 ansible_port=22 ansible_user=vagrant
+elastic.local   ansible_port=22 ansible_user=vagrant
 
 [haproxy]
-haproxy.local   ansible_host=192.168.33.50 ansible_port=22 ansible_user=vagrant
+haproxy.local   ansible_port=22 ansible_user=vagrant
 
 [galera]
-galera1.local   ansible_host=192.168.33.60 ansible_port=22 ansible_user=vagrant
-galera2.local   ansible_host=192.168.33.61 ansible_port=22 ansible_user=vagrant
-galera3.local   ansible_host=192.168.33.62 ansible_port=22 ansible_user=vagrant
+galera1.local   ansible_port=22 ansible_user=vagrant
+galera2.local   ansible_port=22 ansible_user=vagrant
+galera3.local   ansible_port=22 ansible_user=vagrant
 
 [webserver]
-web1.local      ansible_host=192.168.33.70 ansible_port=22 ansible_user=vagrant
-web2.local      ansible_host=192.168.33.71 ansible_port=22 ansible_user=vagrant
-web3.local      ansible_host=192.168.33.72 ansible_port=22 ansible_user=vagrant
+web1.local      ansible_port=22 ansible_user=vagrant
+web2.local      ansible_port=22 ansible_user=vagrant
+web3.local      ansible_port=22 ansible_user=vagrant
 
 [hostmaster]
-aegir.local     ansible_host=192.168.33.80 ansible_port=22 ansible_user=vagrant
+aegir.local     ansible_port=22 ansible_user=vagrant
 
 [swagger]
-swagger.local   ansible_host=192.168.33.90 ansible_port=22 ansible_user=vagrant
+swagger.local   ansible_port=22 ansible_user=vagrant
 
 [teamcity]
-teamcity.local  ansible_host=192.168.33.100 ansible_port=22 ansible_user=vagrant
+teamcity.local  ansible_port=22 ansible_user=vagrant
