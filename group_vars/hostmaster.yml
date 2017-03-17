@@ -9,6 +9,7 @@ user_passwordless_sudo: true
 #user_authorized_keys: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 #user_authorized_keys: https://github.com/user.keys
 
+aegir_version: "3.10"
 aegir_frontend_url: aegir.local
 aegir_host_url: aegir.local
 aegir_db_password: "MYSQL_AEGIR_USER_PASSWORD"
