@@ -6,6 +6,7 @@
       git:
         repo: "https://github.com/tovletoglou/{{ item }}.git"
         dest: "{{ playbook_dir }}/roles/{{ item }}"
+        update: yes
       with_items:
         - ansible-role-aegir
         - ansible-role-aegir-hosting-queued
