@@ -25,3 +25,4 @@
         - ansible-role-scrapy
         - ansible-role-user
         - ansible-role-yum-repos
+        - ansible-role-wp-cli
