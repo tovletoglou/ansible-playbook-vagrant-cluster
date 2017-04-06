@@ -1,7 +1,6 @@
 ---
 
 - hosts: wordpress
-  become: yes
   roles:
     - ansible-role-yum-repos
     - ansible-role-initialize
@@ -11,5 +10,6 @@
     - ansible-role-httpd
     - ansible-role-php
     - ansible-role-composer
-    - ansible-role-wp-cli
     - ansible-role-dotfiles
+    - ansible-role-wp-cli
+    - ansible-role-wordpress

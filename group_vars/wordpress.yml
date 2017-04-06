@@ -1,0 +1,128 @@
+---
+
+# ansible-role-initialize
+initialize_selinux_state: disabled
+initialize_selinux_policy: targeted
+initialize_packages:
+  - curl
+  - gcc
+  - kernel-devel
+  - libzip
+  - man
+  - nano
+  - net-toolsvar  ww
+  - nmap
+  - postfix
+  - tree
+  - unzip
+  - vim
+  - wget
+  - zip
+initialize_packages_remove:
+initialize_packages_update: yes
+initialize_debug: false
+
+# ansible-role-git
+git_install_from_source: false
+git_update: latest
+git_install_git_crypt: false
+
+# ansible-role-firewalld
+firewalld_debug: false
+firewalld_rules:
+  ssh:
+    port: 22
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  http:
+    port: 80
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  https:
+    port: 443
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+
+# ansible-role-mariadb
+mysql_root_password: "MYSQL_ROOT_PASSWORD"
+mariadb_install_from_centos: true
+mariadb_my_cnf_configuration: true
+mariadb_galera_configuration: false
+
+# ansible-role-httpd
+httpd_configuration:
+  # Harder httpd by removing ServerSignature
+  - regexp: "^ServerSignature"
+    line: "ServerSignature Off"
+  # Harder httpd by removing ServerTokens
+  - regexp: "^ServerTokens"
+    line: "ServerTokens ProductOnly"
+
+# ansible-role-php
+remove_php: false
+yum_state: latest
+php_webserver: true
+webserver: httpd
+php_version: php56
+repository: ius
+php_modules:
+  - cli
+  - common
+  - devel
+  - fpm
+  - gd
+  - ldap
+  - mbstring
+  - mcrypt
+  - mysqlnd
+  - opcache
+  - pdo
+  - pear
+  - pecl-uploadprogress
+  - process
+  - xml
+create_custom_php_ini: true
+custom_php_ini: custom
+create_phpinfo: true
+webserver_folder: /var/www/html/
+
+# ansible-role-composer
+composer_directory: /usr/local/bin
+composer_keep_updated: true
+composer_version: ''
+composer_installer_path: /usr/local/share/applications/composer
+composer_add_to_path: true
+composer_remove: false
+
+# ansible-role-wp-cli
+wp_cli_install_path: /usr/local/share/applications/wp
+wp_cli_path: /usr/local/bin/wp
+wp_cli_version: "v1.1.0"
+wp_cli_keep_updated: yes
+wp_cli_force_update: no
+wp_cli_completion_add : true
+wp_cli_completion_script: "{{ wp_cli_install_path }}/utils/wp-completion.bash"
+wp_cli_profile_path: "/home/vagrant/dotfiles/.bashrc"
+
+# ansible-role-dotfiles
+dotfile_repo: http://github.com/tovletoglou/dotfiles.git
+dotfile_update: no
+dotfile_users:
+  - {
+      name: root,
+      dest: /root,
+      gitname: GIT_ROOT_NAME,
+      gitmail: ROOT@EMAIL
+    }
+  - {
+      name: vagrant,
+      dest: /home/vagrant,
+      gitname: GIT_VAGRANT_NAME,
+      gitmail: VAGRANT@EMAIL
+    }
