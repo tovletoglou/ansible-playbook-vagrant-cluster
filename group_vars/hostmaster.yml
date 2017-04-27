@@ -1,14 +1,37 @@
 ---
+# Firewall ---------------------------------------------------------------------
+firewalld_rules:
+  ssh:
+    port: 22
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  http:
+    port: 80
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
+  https:
+    port: 443
+    protocol: tcp
+    state: enabled
+    zone: public
+    permanent: true
 
+# MySQL ------------------------------------------------------------------------
 mysql_root_password: "MYSQL_ROOT_PASSWORD_ON_AEGIR_SERVER"
 mariadb_install_from_centos: true
 mariadb_my_cnf_configuration: true
 mariadb_galera_configuration: false
 
+# Users ------------------------------------------------------------------------
 user_passwordless_sudo: true
 #user_authorized_keys: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 #user_authorized_keys: https://github.com/user.keys
 
+# Aegir ------------------------------------------------------------------------
 aegir_version: "3.10"
 aegir_frontend_url: aegir.local
 aegir_host_url: aegir.local
@@ -23,9 +46,11 @@ aegir_modules_disable:
   - color
   - help
 
+# Drupal console ---------------------------------------------------------------
 drupal_console_keep_updated: true
 drupal_console_config: false
 
+# dot files --------------------------------------------------------------------
 dotfile_users:
   - {
       name: root,
