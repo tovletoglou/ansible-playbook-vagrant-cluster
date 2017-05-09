@@ -10,7 +10,7 @@ initialize_packages:
   - libzip
   - man
   - nano
-  - net-toolsvar  ww
+  - net-tools
   - nmap
   - postfix
   - tree
