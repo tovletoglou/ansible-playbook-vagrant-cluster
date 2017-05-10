@@ -5,8 +5,8 @@
 #
 #
 # Vagrant VM
-# The `hostmaster` host is a Vagrant VM defined in `hosts_vagrant`
-# It is included in the [vagrant blueprint](https://github.com/tovletoglou/vagrant-multi-vm)
+# The `hostmaster` host is a Vagrant VM defined in `hosts` file.
+# It is included in the [vagrant blueprint](https://github.com/tovletoglou/vagrant-playground)
 # To run the playbook on the Vagrant VM execute:
 #
 #     ansible-playbook -i hosts_vagrant playbook_hostmaster.yml
@@ -14,7 +14,7 @@
 #
 # Test VM
 # The `test` host is a Digital Ocean VM.
-# It is not included in the [vagrant blueprint](https://github.com/tovletoglou/vagrant-multi-vm)
+# It is not included in the [vagrant blueprint](https://github.com/tovletoglou/vagrant-playground)
 # To run the playbook on the Test VM execute:
 #
 #     ansible-playbook -i hosts_test playbook_hostmaster.yml --ask-vault-pass
