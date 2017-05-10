@@ -24,5 +24,6 @@
         - ansible-role-php
         - ansible-role-scrapy
         - ansible-role-user
-        - ansible-role-yum-repos
+        - ansible-role-wordpress
         - ansible-role-wp-cli
+        - ansible-role-yum-repos
