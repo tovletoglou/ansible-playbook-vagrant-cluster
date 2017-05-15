@@ -23,6 +23,21 @@ while test $# -gt 0; do
             done
             exit 0
             ;;
+    -p|--pull)
+            # Pull online playbook.
+              echo -e "\e[32mrepo: $DIRECTORY\e[0m"
+              git --git-dir="$DIRECTORY".git --work-tree=$DIRECTORY pull
+              echo
+
+            # Pull one by one all sub-projects in the `roles/` directory.
+            for d in "$DIRECTORY"roles/*/; do
+                echo -e "\e[32mrepo: $d\e[0m"
+                git --git-dir=$d.git --work-tree=$d pull
+                echo
+            done
+            exit 0
+            ;;
+
     *)
             echo -e "\e[31mWrong parameter. Printing default output:\e[0m"
             echo
