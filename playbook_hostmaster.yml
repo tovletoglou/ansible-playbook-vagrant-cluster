@@ -43,5 +43,6 @@
     - ansible-role-user
     - ansible-role-aegir
     - ansible-role-aegir-hosting-queued
+    - ansible-role-aegir-extra-configuration
     - ansible-role-drupalconsole
     - ansible-role-dotfiles

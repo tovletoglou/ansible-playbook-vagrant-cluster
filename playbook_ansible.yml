@@ -9,6 +9,7 @@
         update: yes
       with_items:
         - ansible-role-aegir
+        - ansible-role-aegir-extra-configuration
         - ansible-role-aegir-hosting-queued
         - ansible-role-composer
         - ansible-role-dotfiles
@@ -27,3 +28,4 @@
         - ansible-role-wordpress
         - ansible-role-wp-cli
         - ansible-role-yum-repos
+
