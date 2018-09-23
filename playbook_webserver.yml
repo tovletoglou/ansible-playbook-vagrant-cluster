@@ -9,7 +9,65 @@
     - ansible-role-composer
     - ansible-role-drush
     - ansible-role-drupalconsole
+    - ansible-role-mariadb
   vars:
+    dotfile_users:
+    - {
+        name: root,
+        dest: /root,
+        gitname: GIT_ROOT_NAME,
+        gitmail: ROOT@EMAIL
+      }
+    - {
+        name: vagrant,
+        dest: /home/vagrant,
+        gitname: GIT_VAGRANT_NAME,
+        gitmail: VAGRANT@EMAIL
+      }
+
+    firewalld_rules:
+      ssh:
+        port: 22
+        protocol: tcp
+        state: enabled
+        zone: public
+        permanent: true
+      http:
+        port: 80
+        protocol: tcp
+        state: enabled
+        zone: public
+        permanent: true
+      https:
+        port: 443
+        protocol: tcp
+        state: enabled
+        zone: public
+        permanent: true
+
+    mysql_root_password: "MYSQL_ROOT_PASSWORD"
+    mariadb_install_from_centos: true
+    mariadb_my_cnf_configuration: true
+    mariadb_galera_configuration: false
+
+    remove_php: false
+    php_version: php71
+    php_modules:
+      - cli
+      - common
+      - devel
+      - fpm
+      - gd
+      - json
+      - ldap
+      - mbstring
+      - mcrypt
+      - mysqlnd
+      - opcache
+      - pdo
+      - process
+      - xml
+
     drupal_console_keep_updated: true
     drupal_console_config: false
     drupal_console_config_users:
