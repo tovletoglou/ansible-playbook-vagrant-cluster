@@ -33,7 +33,7 @@ user_passwordless_sudo: true
 #user_authorized_keys: https://github.com/user.keys
 
 # Aegir ------------------------------------------------------------------------
-aegir_version: "3.10"
+aegir_version: "3.160"
 aegir_frontend_url: aegir.local
 aegir_host_url: aegir.local
 aegir_db_password: "MYSQL_AEGIR_USER_PASSWORD"
@@ -71,3 +71,22 @@ dotfile_users:
       gitname: GIT_AEGIR_NAME,
       gitmail: AEGIR@EMAIL
     }
+
+# PHP --------------------------------------------------------------------------
+remove_php: false
+php_version: php71
+php_modules:
+  - cli
+  - common
+  - devel
+  - fpm
+  - gd
+  - json
+  - ldap
+  - mbstring
+  - mcrypt
+  - mysqlnd
+  - opcache
+  - pdo
+  - process
+  - xml
