@@ -17,7 +17,9 @@ ansible.local    ansible_port=22 ansible_user=vagrant
 scrapy.local     ansible_port=22 ansible_user=vagrant
 
 [elastic]
-elastic.local    ansible_port=22 ansible_user=vagrant
+elastic1.local    ansible_port=22 ansible_user=vagrant
+elastic2.local    ansible_port=22 ansible_user=vagrant
+elastic2.local    ansible_port=22 ansible_user=vagrant
 
 [haproxy]
 haproxy.local    ansible_port=22 ansible_user=vagrant
