@@ -8,6 +8,7 @@ webserver
 hostmaster
 swagger
 teamcity
+wordpress
 drupal
 
 [ansible]
