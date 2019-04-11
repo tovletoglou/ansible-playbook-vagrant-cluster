@@ -1,0 +1,13 @@
+---
+
+- hosts: drupal
+  roles:
+    - ansible-role-yum-repos
+    - ansible-role-initialize
+    - ansible-role-git
+    - ansible-role-firewalld
+    - ansible-role-mariadb
+    - ansible-role-httpd
+    - ansible-role-php
+    - ansible-role-composer
+    - ansible-role-dotfiles

@@ -8,7 +8,7 @@ webserver
 hostmaster
 swagger
 teamcity
-wordpress
+drupal
 
 [ansible]
 ansible.local    ansible_port=22 ansible_user=vagrant
@@ -45,3 +45,6 @@ teamcity.local   ansible_port=22 ansible_user=vagrant
 
 [wordpress]
 wordpress.local  ansible_port=22 ansible_user=vagrant
+
+[drupal]
+drupal.local     ansible_port=22 ansible_user=vagrant
